@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Redressed&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="main-container">
-      <button id="reset">Make New Grid</button>
+      <p class="header">
+        Magic
+        <span class="title-focus">Etch a Sketch<sup>&reg;</sup></span> Screen
+      </p>
       <div id="grid-container"></div>
+      <div id="buttons">
+        <button id="multipass">Classic Mode</button>
+        <button id="reset">Make New Grid</button>
+        <button id="random-color">Randomize Color</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
