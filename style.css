@@ -3,17 +3,24 @@
   --grid-rows: 1;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 #main-container {
   padding: 0.5em 2em;
   background-color: rgb(223, 22, 22);
-  width: 70%;
-  margin: 0 auto;
+  width: 57%;
+  margin: 2em auto 0;
+  border-radius: 2%;
 }
 
 .header {
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
-  margin: 0.4em;
+  margin: 0.2em;
   color: rgb(182, 161, 43);
   font-family: "Redressed", cursive;
 }
@@ -25,10 +32,10 @@
 
 #buttons {
   display: flex;
+  /* justify-content: space-around; */
 }
 
 #buttons * {
-  display: block;
   padding: 1em;
   margin: 1em auto;
   font-size: 1em;
