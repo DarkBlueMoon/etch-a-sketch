@@ -1,5 +1,13 @@
 const container = document.querySelector("#grid-container");
-const button = document.querySelector("#reset");
+const newGridBtn = document.querySelector("#reset");
+const classicBtn = document.querySelector("#multipass");
+const randomizeBtn = document.querySelector("#random-color");
+const defaultBtn = document.querySelector("#default-color");
+
+const MODE_RANDOM = "random";
+const MODE_DEFAULT = "default";
+
+let mode = MODE_DEFAULT;
 
 // Thanks to Nidhin Joseph: https://stackoverflow.com/a/57550587
 function makeGrid(rows, cols) {
@@ -20,13 +28,17 @@ makeGrid(16, 16);
 function addHoverEvents() {
   const cells = document.querySelectorAll(".grid-item");
   cells.forEach((cell) => {
-    cell.addEventListener("mouseover", () => {
-      cell.classList.add("black");
+    cell.addEventListener("mouseover", (e) => {
+      if (mode === MODE_DEFAULT) {
+        e.target.style.backgroundColor = "#000000";
+      } else if (mode === MODE_RANDOM) {
+        e.target.style.backgroundColor = getColor();
+      }
     });
   });
 }
 
-button.addEventListener("click", () => {
+newGridBtn.addEventListener("click", () => {
   let numCells = 0;
   do {
     numCells = parseInt(prompt("How many cells would you like? (Max of 100)"));
@@ -38,3 +50,20 @@ button.addEventListener("click", () => {
 
   makeGrid(numCells, numCells);
 });
+
+defaultBtn.addEventListener("click", () => {
+  mode = MODE_DEFAULT;
+});
+
+randomizeBtn.addEventListener("click", () => {
+  mode = MODE_RANDOM;
+});
+
+function getColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
