@@ -39,10 +39,18 @@ function addHoverEvents() {
 }
 
 newGridBtn.addEventListener("click", () => {
-  let numCells = 0;
-  do {
-    numCells = parseInt(prompt("How many cells would you like? (Max of 100)"));
-  } while (numCells > 100 || isNaN(numCells));
+  let numCells = parseInt(
+    prompt("How many cells would you like? (Max of 100, defaults to 16)")
+  );
+
+  if (numCells > 100 || isNaN(numCells)) {
+    numCells = 16;
+  }
+  // do {
+  //   numCells = parseInt(
+  //     prompt("How many cells would you like? (Max of 100)")
+  //   );
+  // } while (numCells > 100 || isNaN(numCells));
 
   while (container.firstChild) {
     container.removeChild(container.firstChild);
