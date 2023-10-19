@@ -21,10 +21,13 @@ html {
 .grid-row {
   display: flex;
   flex: 1;
-  border: 1px solid blue;
 }
 
 .grid-cell {
   flex: 1;
-  border: 1px solid red;
+  border: 1px solid black;
+}
+
+.filled {
+  background-color: black;
 }
